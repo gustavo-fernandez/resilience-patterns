@@ -14,11 +14,17 @@ public class CustomerController {
 
   private final CustomerService customerService;
 
-
+  @CircuitBreaker(name = "customer-cb-01")
   @GetMapping("api/customer")
   public Mono<Customer> findCustomer() {
     return customerService.findCustomer()
       .onErrorResume(e -> Mono.just(new Customer(-1L, e.getClass().getCanonicalName())));
+  }
+
+  @CircuitBreaker(name = "employee-cb-01")
+  @GetMapping("api/employee")
+  public Mono<Customer> findEmployee() {
+    return Mono.just(new Customer(9L, "Employee"));
   }
 
 }

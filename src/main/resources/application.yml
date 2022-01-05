@@ -5,3 +5,7 @@ resilience4j:
         slidingWindowSize: 11
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 3
+      employee-cb-01:
+        slidingWindowSize: 11
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
