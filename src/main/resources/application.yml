@@ -9,3 +9,22 @@ resilience4j:
         slidingWindowSize: 11
         waitDurationInOpenState: 10s
         permittedNumberOfCallsInHalfOpenState: 3
+  timelimiter:
+    instances:
+      time-limiter-01:
+        timeoutDuration: 2s
+  retry:
+    instances:
+      retry-01:
+        maxAttempts: 3
+  ratelimiter:
+    instances:
+      rate-limiter-01:
+        limitRefreshPeriod: 10s
+        limitForPeriod: 2
+        timeoutDuration: 2s
+  bulkhead:
+    instances:
+      bulkhead-01:
+        maxConcurrentCalls: 5
+        maxWaitDuration: 1s
