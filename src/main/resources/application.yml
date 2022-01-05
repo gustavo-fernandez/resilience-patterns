@@ -1,0 +1,7 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      customer-cb-01:
+        slidingWindowSize: 11
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
